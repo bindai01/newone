@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pseudo classes</title>
+    <style>
+        .parent {
+            display: flex;
+            height: 100px;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        .item1 {
+            height: 100px;
+            width: 150px;
+            border: solid 1px black;
+            text-align: center;
+
+        }
+
+        div.item1:hover {
+            background-color: darkred;
+            color: white;
+
+        }
+        .parent2{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+        }
+
+        .item2{
+            height: 400px;
+            width:300px;
+            border: solid 2px red;
+            overflow: auto;
+        }
+        .item2:hover{
+            background-color: aqua;
+        }
+        p.p2::first-line{
+            color: blue;
+            font-weight: bold;
+        }
+        p.p1::first-line{
+            color: brown;
+            font-weight: bold;
+        }
+       
+        
+
+        P:hover{
+            background-color: blueviolet;
+        }
+        p::before {
+            content:url("nature.jfif") ;
+
+        }
+        p:hover{
+            color: chocolate;
+            
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="parent">
+        <div class="item1">Home</div>
+        <div class="item1"> About</div>
+        <div class="item1">Contact</div>
+    </diV>
+    <div class="parent2">
+        <div class="item2">
+            <p class="p1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quo, impedit cum suscipit ut eius quidem,
+                fuga quae repudiandae repellat quas natus at deleniti consequatur odio modi reprehenderit corporis
+                praesentium porro. Ducimus inventore, molestias consequatur aliquid ullam reprehenderit recusandae
+                similique omnis eum voluptates corrupti exercitationem expedita quos officiis dolorem modi earum
+                deleniti? Deserunt aliquid, repellat dignissimos, nam atque soluta cumque, aut ducimus velit dolore
+                ipsum sed! Minima qui quam vitae ipsum animi vero voluptatum accusamus, reiciendis optio dolores? Porro
+                mollitia laudantium aliquid dolor est magnam, veritatis et dolorum aut eum ea, tempora voluptates veniam
+                velit, iure aspernatur? Quos, modi accusantium.
+
+            </p>
+        </div>
+        <div class="item2">
+            <p class="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, illum? Numquam quasi odio facere
+                quaerat. Dolore necessitatibus atque sit quia minima corrupti repellat ea, tempore odio ducimus
+                aspernatur molestias debitis est quidem fugit! Quod, numquam ut quidem libero corporis aliquid sapiente
+                totam magni eaque doloribus tempora sint dignissimos eum distinctio necessitatibus! Maiores vel cumque
+                similique nam voluptatum dignissimos numquam nostrum inventore quia magni esse nesciunt ab, atque
+                tempore beatae omnis?</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>
