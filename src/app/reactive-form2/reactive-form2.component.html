@@ -1,0 +1,26 @@
+<h2> <u>reactive-form2 with Validation </u> </h2><br>
+<form [formGroup]="myForm" (ngSubmit)="onlineSubmitForm()">
+    <div class="form-group">
+        <label for=""> First Name:</label>
+        <input type="text" name="fname" id="" class="form-control" formControlName="fname" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.erros?.required" class="invalid-feedback">
+            Please enter First name
+        </div>
+    </div>
+    <div class="form-group">
+        <label for=""> Last Name:</label>
+        <input type="text" name="lname" id="" class="form-control" formControlName="lname" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.lname.errors}">
+        <div *ngIf="isFormSubmitted && f.lname.erros?.required" class="invalid-feedback">Please enter Last name</div>
+        <!-- <div *ngIf="formSubmitted && f.lname.erros?.minLength" class="invalid-feedback">Please enter 6 length last name</div>> -->
+    </div>
+    <div class="form-group">
+        <label for=""> Email:</label>
+        <input type="email" name="email" id="" class="form-control" formControlName="email" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.email.errors}">
+        <div *ngIf="isFormSubmitted && f.email.erros?.required" class="invalid-feedback">Please enter email</div>
+        <div *ngIf="isFormSubmitted && f.email.erros?.pattern" class="invalid-feedback">Please enter valid email</div>
+    </div><br><br>
+    <button class="btn btn-info">Submit</button>
+</form>

@@ -1,0 +1,69 @@
+<!-- <h2>Template Driven Forms</h2>
+<hr>
+<form name="my-form" #frm="ngForm" (ngSubmit)="onlineSubmit(frm)">
+    <div class="form-temp">
+<label for="fname" >First Name:</label>
+<input type="text"name="Fname" id="fname" placeholder="Enter your first name"class="form-control" #Fname="ngModel"
+[(ngModel)]="fn">
+</div>
+<div class="form-temp">
+<label for="lname">Last Name:</label>
+<input type="text" name="Lname" id="lname"placeholder="Enetr your last name" class="form-control"#Lname="ngModel" ngModel>
+</div>
+<div class="form-temp">
+<label for="email">Email:</label>
+<input type="email" name="mail" id="email"placeholder="Enetr your mail id" class="form-control"#mail="ngModel" ngModel>
+</div>
+<div class="form-temp">
+<label for="pass">password:</label>
+<input type="password" name="password" id="pass"placeholder="give password" class="form-control"#password="ngModel" ngModel>
+</div>
+<div class="form-temp">
+<label for="cpass">Confirm password:</label>
+<input type="cpassword" name="password" id="cpass"placeholder="Confirm password" class="form-control"#cpassword="ngModel" ngModel>
+</div>
+<div class="form-temp">
+Gender:
+<input type="radio" name="gender" id="male" value="Male"#gender="ngModel" ngModel>
+<label for="male">Male</label>
+<input type="radio" name="gender" id="female" value="Female"#gender="ngModel" ngModel>
+<label for="female">Female</label>
+</div><br>
+<div class="form-temp">
+<label for="state">Select Your state:</label>&nbsp;&nbsp;
+<select name="State" id="state"#State="ngModel" ngModel>
+    <option *ngFor ="let sv of state">{{sv}}</option>
+    </select>
+</div><br><br>
+<div class="form-temp">
+    <button type ="submit" class="btn btn-info"> Submit</button>
+</div>
+    </form> -->
+
+    <h2>Template Driven Forms</h2>
+<form name="myform" #frm="ngForm" (ngSubmit)="frm.form.valid && submitForm(frm)">
+    <div class="form1">
+        <label for="fname">First Name:<span style="color: red;">*</span></label>
+        <input type="text" name="Fname" id="fname" class="form-control" #Fname="ngModel" ngModel required
+            [ngClass]="{'is-invalid': frm.submitted && Fname.invalid}">
+        <div *ngIf="frm.submitted && Fname.invalid" class="invalid-feedback">First Name is required</div>
+    </div>
+    <div class="form1">
+        <label for="email">Email:<span style="color: red;">*</span></label>
+        <input type="email" name="mail" id="email" class="form-control" #mail="ngModel" 
+        ngModel required [ngClass]="{'is-invalid':frm.submitted && mail.invalid}" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        <div *ngIf="mail.touched" class="invalid-feedback">
+            <p *ngIf="mail.errors?.['required']">Email is required</p>
+            <p *ngIf="mail.errors?.['pattern']">Invalid mail id</p>
+        </div>
+    </div>
+    <div class="form1">
+        <label for="pass">password:<span style="color: red;">*</span></label>
+        <input type="password" name="password" id="pass" class="form-control" #password="ngModel" 
+        ngModel required [ngClass]="{'is-invalid':frm.submitted && password.invalid}">
+        <div *ngIf="frm.submitted && password.invalid" class="invalid-feedback">Password is required</div>
+    </div><br><br>
+    <div class="form1">
+        <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+</form>

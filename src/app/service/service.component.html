@@ -1,0 +1,14 @@
+<div>
+    <table appCustDirective>
+        <tr>
+            <th>User Id</th>
+            <th class="table_width">Title</th>
+            <th class="table_width">Body</th>
+        </tr>
+        <tr *ngFor="let x of htmldata">
+            <td> {{x.userId}}</td>
+            <td> {{x.title | custom}}</td>
+            <td> {{x.body}}</td>
+        </tr>
+    </table>
+</div>

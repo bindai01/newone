@@ -1,0 +1,14 @@
+table{
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0.5cm;
+}
+tr{
+    width: 100%;
+}
+td{
+    width:25%
+}

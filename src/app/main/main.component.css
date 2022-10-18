@@ -1,0 +1,13 @@
+
+.main_part{
+    display: flex;
+}
+
+.main{
+    height: 400px;
+    width: 50%;
+  padding-top: 100px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -1,0 +1,27 @@
+
+<br><h4>*ngswitch stuructural directives</h4><br>
+
+<div [ngSwitch]="no">
+    <div *ngSwitchCase = "1">This is no 1</div>
+    <div *ngSwitchCase = "2">This is no 2</div>
+    <div *ngSwitchCase = "3">This is no 3</div>
+    <div *ngSwitchCase = "4">This is no 4</div>
+    <div *ngSwitchCase = "5">This is no 5</div>
+    <div *ngSwitchDefault>This is default case</div>
+</div>
+<br>
+
+<u><h4>Attribute Directives</h4></u><br>
+<!-- 1.ngClass -->
+
+<P [ngClass]="test"> This is ngClass aatribute directives </P>
+<P [ngClass]="test1"> This is ngClass aatribute directives </P>
+<p [ngClass]="data ? 'cl1':'cl2'"> this will be in brown color</p>
+
+<br> <br>
+
+<p [ngStyle]="{'background-color':'green','color':'pink'}"> This is ngstyle Attribute directives</p>
+
+<div [ngStyle]="data ? style1: style2"> NGSTYLE ATTRIBUTE DIRECTIVES </div>
+<br>
+

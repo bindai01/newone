@@ -1,0 +1,110 @@
+<!-- <h2>Reactive forms</h2><br>
+ <form [formGroup]="myform"  (ngSubmit)="onLineSubmit()">
+    <div class="form-temp">
+<label for="fname" >First Name:</label>
+<input type="text"name="Fname" id="fname" placeholder="Enter your first name"class="form-control" formControlName="Fname">
+
+</div>
+<div class="form-temp">
+<label for="lname">Last Name:</label>
+<input type="text" name="Lname" id="lname"placeholder="Enetr your last name" class="form-control" formControlName="Lname">
+</div>
+<div class="form-temp">
+<label for="email">Email:</label>
+<input type="email" name="mail" id="email"placeholder="Enetr your mail id" class="form-control"formControlName="mail">
+</div>
+<div class="form-temp">
+<label for="pass">password:</label>
+<input type="password" name="password" id="pass"placeholder="give password" class="form-control"formControlName="password">
+</div>
+<div class="form-temp">
+<label for="cpass">Confirm password:</label>
+<input type="cpassword" name="password" id="cpass"placeholder="Confirm password" class="form-control" formControlName="cpassword">
+</div>
+<div class="form-temp">
+Gender:
+<input type="radio" name="gender" id="male" value="Male" formControlName="gender">
+<label for="male">Male</label>
+<input type="radio" name="gender" id="female" value="Female" formControlName="gender">
+<label for="female">Female</label>
+</div><br>
+<div class="form-temp">
+<label for="state">Select Your state:</label>&nbsp;&nbsp;
+<select name="State" id="state" formControlName="State">
+    <option *ngFor ="let sv of state">{{sv}}</option>
+    </select>
+</div><br><br>
+<div class="form-temp">
+    <button  class="btn btn-info"> Submit</button>
+</div>
+    </form> -->
+<form [formGroup]="myForm" (ngSubmit)="onLineSubmit()">
+    <div class="form-group">
+        <label for="fname">First Name:<span style="color:red">*</span></label>
+        <input type="text" name="fname" id="fname" formControlName="fname" class="form-control" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            First Name is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lname">Last Name:<span style="color:red">*</span></label>
+        <input type="text" name="lname" id="lname" class="form-control" formControlName="lname" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.lname.errors}">
+        <div *ngIf=" isFormSubmitted && f.lname.errors?.required" class="invalid-feedback"> Lastname is required</div>
+        <div *ngIf=" isFormSubmitted && f.lname.errors?.maxlength" class="invalid-feedback"> Enter 5 length</div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:<span style="color:red">*</span></label>
+        <input type="email" name="mail" id="email" class="form-control" formControlName="mail" required
+            [ngClass]="{'is-invalid': isFormSubmitted && f.mail.errors}">
+        <div *ngIf="isFormSubmitted && f.mail.errors?.required" class="invalid-feedback"> Email is required</div>
+        <div *ngIf="isFormSubmitted && f.mail.errors?.pattern" class="invalid-feedback"> Enterd Valid Mail id</div>
+    </div><br> <br>
+
+    <button class="btn btn-info">Submit</button>
+
+</form>
+<!-- <h2>Reactive Form</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm()" >
+    <div class="form-group">
+        <label>First Name: </label>
+        <input type="text" name="fname" formControlName="fname" class="form-control"
+        required placeholder="First Name is required" 
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            First Name is Required
+        </div> 
+    </div>
+
+    <div class="form-group">
+        <label>Last Name: </label>
+        <input type="text" name="lname" formControlName="lname" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Email: </label>
+        <input type="email" name="email" formControlName="email" class="form-control"
+        required [ngClass]="{'is-invalid': isFormSubmitted && f.email.errors}" >
+        <div *ngIf="isFormSubmitted && f.email.errors?.required" class="invalid-feedback">
+            Email is Required
+        </div>
+        <div *ngIf="isFormSubmitted && f.email.errors?.pattern" class="invalid-feedback">
+            Please Enter Valid Email
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Password: </label>
+        <input type="password" name="pass" formControlName="pass" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password: </label>
+        <input type="password" name="cpass" formControlName="cpass" class="form-control">
+    </div>
+
+    <button class="btn btn-info">Submit</button>
+</form> -->

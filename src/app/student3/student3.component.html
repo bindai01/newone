@@ -1,0 +1,38 @@
+<h2>Angular Directives</h2>
+<!-- structural Directives -->
+<!-- 1.ngIf -->
+<!-- <p *ngIf="num>18">You have entered Number{{num}} is greater than 18 </p>
+<br>
+<h4> Please Select Employee Name:
+<select>
+<option *ngFor="let name of empname">{{name}}</option>
+</select>
+    <br>
+   
+     -->
+    
+     <p *ngIf="age<=20;">He is  not a adult</p><br>v
+    
+        choose: <select>
+        <option *ngFor="let x of arr">{{x}}</option>
+     </select>
+    
+     <div [ngSwitch]="no">
+        <div *ngSwitchCase="1">One</div>
+        <div *ngSwitchCase="2">two</div>
+        <div *ngSwitchCase="3">three</div>
+        <div *ngSwitchDefault>default</div>
+
+     </div>
+     <p appCustDirective>Hi this is also by <u>cust directive</u>.......!!!!!!!!!</p>
+     
+     <p [ngClass]="test">this will be in blue color</p>
+     <p [ngClass]="data ? 'test1':'test2'">this will be in red color</p>
+
+     <p [ngStyle]="{'color':'pink'}">helloooooo</p><br>
+
+     <p [ngStyle]="data ? l1: l2"> HIIII HELOOOOOO</p><br>
+   <div appCustDirective>
+<h2>Custom directive</h2>
+     <p>Hi this is Aparna.......!!!!!!!!!</p>
+   </div>
